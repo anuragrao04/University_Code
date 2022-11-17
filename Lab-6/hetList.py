@@ -8,7 +8,7 @@ for i in l:
     if type(i) is bool: lbool.append(i)
     elif type(i) is str: lstring.append(i)
     elif type(i) is int: lint.append(i)
-    elif type(i)is float: lfloat.append(i)
+    elif type(i) is float: lfloat.append(i)
     else: print("AAAAAAAAAAHHHHHHH")
 
 
