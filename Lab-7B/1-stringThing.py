@@ -59,15 +59,20 @@ print(f"{len(states)} states: \n{states}\n\n")
 for i in stateCities:
     cities = stateCities[i]
     print(f"State: {i} \n{len(cities)} Cities: {cities}")
+    print()
 print('\n')
 
-#3 and #4
+#3
 for i in stateCityPlace:
     places = stateCityPlace[i]
-    print(f"{i} \n{len(places)} {'place' if len(places) == 1 else 'places'}: {places} ")
+    print(f"{i} \nplaces: {places} ")
+    print()
+print('\n')
 
-
- 
+#4
+for i in stateCityPlace:
+    places = stateCityPlace[i]
+    print(f"{i} => {len(places)} {'places' if len(places) > 1 else 'place'}")
 
 
 
