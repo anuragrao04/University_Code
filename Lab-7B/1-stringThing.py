@@ -23,14 +23,16 @@
 str_places = '''karnataka bangalore lalbagh
 tamilnadu kanyakumari vivekananda_rock
 kerala thiruvananthapuram padmanabha_temple
-kerala idukki munnar
-karnataka mysore brindavan_gardens
-karnataka mysore mysore_palace
-karnataka hassan shravanabelagola
-tamilnadu chennai egmore_museum
-tamilnadu kanyakumari kaamaakshmi_temple
-karnataka bangalore cubbon_park
-karnataka hampi maharnavami_dibba'''
+kerala idukki munnar'''
+
+
+# karnataka mysore brindavan_gardens
+# karnataka mysore mysore_palace
+# karnataka hassan shravanabelagola
+# tamilnadu chennai egmore_museum
+# tamilnadu kanyakumari kaamaakshmi_temple
+# karnataka bangalore cubbon_park
+# karnataka hampi maharnavami_dibba
 
 l = list(map(str.split, str_places.split('\n')))
 
