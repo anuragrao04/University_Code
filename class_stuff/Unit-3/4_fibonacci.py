@@ -22,7 +22,6 @@ term = 0
 while(True):
     term = recursiveFibonacci(i)
     if(term > maxTerm): break
-    
-    # The below part of the code executes only if not broke out of loop
+    # The below part of the code executes only if not broken out of loop
     print(term)
     i += 1

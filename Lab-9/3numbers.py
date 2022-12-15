@@ -1,9 +1,7 @@
 import math
-
-
+import operator
 def is_square(x): return math.sqrt(x) % 1 == 0
 def is_even(x): return x % 2 == 0
-
 
 #a 
 n = int(input('n: '))
@@ -11,7 +9,6 @@ print("perfect sqare") if is_square(n) else print("not perfect square")
 
 
 #b
-n = int(input('n: '))
 se = []
 ens = []
 

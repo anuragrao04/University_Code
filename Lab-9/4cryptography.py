@@ -7,10 +7,10 @@ def decrypt(s):
         s[i] = chr(ord(s[i]) - 1) 
 
 
-s = "hello anurag"
+s = "hello!"
 s = list(s)
-encrypt(s)
 
+encrypt(s)
 print("Encrypted:", ''.join(s))
 decrypt(s)
 print("Decrypted:", ''.join(s))

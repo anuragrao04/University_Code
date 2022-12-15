@@ -1,5 +1,4 @@
-def addDollar(func): return lambda number : print(f"${number}"); 
-
+def addDollar(func): return lambda number : print(f"${number}")
 
 @addDollar
 def day_earnings(number):

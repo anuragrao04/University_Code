@@ -5,17 +5,21 @@ authors = ['Rabindranath Tagore',
 'R K Narayan',
 'Jhumpa Lahiri']
 
-def mainFunction(authors):
+
+def sortNameLength(): print(sorted(authors, key = lambda x : len(x)))
+def sortLastName(): print(sorted(authors, key = lambda x : x.split()[-1]))
+
+def mainFunction(authors, func1, func2):
     # a
-    def sortNameLength(): print(sorted(authors, key = lambda x : len(x)))
-    # b
-    def sortLastName(): print(sorted(authors, key = lambda x : x.split()[-1]))
+    func1()
+    #b
+    func2()
+    
 
-    return sortNameLength, sortLastName
+mainFunction(authors, sortNameLength, sortLastName)
 
-snl, sln = mainFunction(authors)
 
-snl()
-sln()
+
+
 
 
