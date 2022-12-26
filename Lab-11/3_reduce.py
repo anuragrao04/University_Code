@@ -11,3 +11,4 @@ print(myreduce(lambda x,y: x if x>y else y, lon))
 #b
 loi = [1,2,3,4,5,6]
 print(myreduce(int.__add__, loi))
+

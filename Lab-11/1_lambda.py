@@ -3,7 +3,7 @@ mul = lambda x,y: x*y
 print(mul(2,3))
 
 #b
-st = lambda x, character: x[0] is character
+st = lambda x, character: x[0] == character
 print(st("python", 'p'))
 
 #c
