@@ -1,0 +1,7 @@
+gt = eval(input())
+t = tuple()
+for i in gt:
+	if type(gt) is list:
+		for j in i:
+			t.append(j)
+	else: t.append(i)

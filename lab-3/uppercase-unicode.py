@@ -1,0 +1,7 @@
+stl = input()
+stu = stl.upper()
+print(stl[0], ord(stu[0]), end = ' ', sep = '')
+print(stl[1], ord(stu[1]), end = ' ', sep = '')
+print(stl[2], ord(stu[2]), end = ' ', sep = '')
+print(stl[3], ord(stu[3]), end = ' ', sep = '')
+print()

@@ -1,0 +1,6 @@
+1. frequency of largest element
+2. sum of diagonal elements
+3. csv given in input, generate list and tuple
+4. repeated in tuple 
+5. flatten tuple of lists to tupple. 
+
