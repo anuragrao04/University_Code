@@ -8,7 +8,6 @@ def mymap(callable, iterable):
 n = int(input())
 print(mymap(lambda x: x**2, range(1,n+1,2)))
 
-
 #b
 l = ["do", "eat", "go"]
 print(mymap(lambda x: x+'ing', l))
