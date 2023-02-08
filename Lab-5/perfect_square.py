@@ -1,8 +1,8 @@
 import math
-n = int(input())
-n = math.sqrt(n)
+m = int(input())
+n = math.sqrt(m)
 
-if n%1 == 0:
+if int(n)*int(n)==m:
     print("Perfect Square")
-
-else: print("Not a perfect square")
+else: 
+    print("Not a perfect square")
