@@ -45,7 +45,7 @@ int main() {
     
     printf("After swapping: a = %d, b = %d\n", a, b);
 
-
+    // WITHOUT USING A TEMP VARIABLE
     printf("Now without using a temp variable. \n");
     printf("Enter two numbers to be swapped: ");
     scanf("%d %d", &a, &b);
