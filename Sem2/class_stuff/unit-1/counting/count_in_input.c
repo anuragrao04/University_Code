@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <ctype.h>
 
 int main() {
     char c;
@@ -10,7 +9,7 @@ int main() {
     while ((c = getchar()) != EOF) {
         num_chars++;
 
-        if (isspace(c)) {
+        if (c == ' ') {
             if (in_word) {
                 num_words++;
                 in_word = 0;

@@ -4,8 +4,8 @@ int main(int argc, char const *argv[]) {
     int count = 0;
     scanf("%d", &n);
     
-    for(int i = n; i >= 0; i--){
-        for(int j = n; j>=0; j-- ){
+    for(int i = n; i > 1; i--){
+        for(int j = n; j > 1; j-- ){
             if(i * j == n && i != 1 && j != 1){
                 // if equal numbers, count twice. because they should iterate twice. doesn't make sense but that's what the teacher told-
                 if(i == j){
