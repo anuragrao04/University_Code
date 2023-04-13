@@ -6,7 +6,11 @@ int get_factorial(int n) {
     return n * get_factorial(n - 1);
   }
 }
-int main(int argc, char *argv[]) {
-  printf("Factorial of 4 is %d", get_factorial(4));
+
+int main(void) {
+  int n = 0;
+  printf("Enter the number: ");
+  scanf("%d", &n);
+  printf("Factorial of %d is %d\n", n, get_factorial(n));
   return 0;
 }
