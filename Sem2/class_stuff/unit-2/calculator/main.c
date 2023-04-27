@@ -1,6 +1,6 @@
+#include "calculator.h"
 #include <stdio.h>
 #define EXIT_SUCCESS 0
-#include "calculator.h"
 int main(int argc, char *argv[]) {
 
   float x, y;

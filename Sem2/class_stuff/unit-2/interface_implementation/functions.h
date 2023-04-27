@@ -1,0 +1,1 @@
+int isPalindrome(int a);
