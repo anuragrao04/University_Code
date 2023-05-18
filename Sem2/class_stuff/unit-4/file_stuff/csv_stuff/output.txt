@@ -1,0 +1,74 @@
+Number of matches in 2008: 58
+Number of times toss_winner same as winner: 292
+Number of matches between KKR and RCB: 18
+
+
+60 winners of every match played in 2016: 
+Rising Pune Supergiants
+Kolkata Knight Riders
+Gujarat Lions
+Royal Challengers Bangalore
+Mumbai Indians
+Gujarat Lions
+Delhi Daredevils
+Kolkata Knight Riders
+Gujarat Lions
+Kings XI Punjab
+Delhi Daredevils
+Sunrisers Hyderabad
+Kolkata Knight Riders
+Mumbai Indians
+Sunrisers Hyderabad
+Royal Challengers Bangalore
+Delhi Daredevils
+Sunrisers Hyderabad
+Gujarat Lions
+Kolkata Knight Riders
+Mumbai Indians
+Rising Pune Supergiants
+Gujarat Lions
+Mumbai Indians
+Gujarat Lions
+Delhi Daredevils
+Sunrisers Hyderabad
+Kings XI Punjab
+Mumbai Indians
+Kolkata Knight Riders
+Delhi Daredevils
+Kolkata Knight Riders
+Rising Pune Supergiants
+Sunrisers Hyderabad
+Royal Challengers Bangalore
+Kings XI Punjab
+Sunrisers Hyderabad
+Gujarat Lions
+Royal Challengers Bangalore
+Sunrisers Hyderabad
+Mumbai Indians
+Delhi Daredevils
+Kings XI Punjab
+Royal Challengers Bangalore
+Kolkata Knight Riders
+Sunrisers Hyderabad
+Mumbai Indians
+Royal Challengers Bangalore
+Rising Pune Supergiants
+Royal Challengers Bangalore
+Gujarat Lions
+Delhi Daredevils
+Rising Pune Supergiants
+Gujarat Lions
+Kolkata Knight Riders
+Royal Challengers Bangalore
+Royal Challengers Bangalore
+Sunrisers Hyderabad
+Sunrisers Hyderabad
+Sunrisers Hyderabad
+
+
+
+
+
+2 players Of Match for every match between RCB and CSK in 2010: 
+RV Uthappa
+M Vijay

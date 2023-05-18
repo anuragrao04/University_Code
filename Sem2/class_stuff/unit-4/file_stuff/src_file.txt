@@ -1,0 +1,2 @@
+this is the src file, this is going to be pasted to dest.
+This is just another line
