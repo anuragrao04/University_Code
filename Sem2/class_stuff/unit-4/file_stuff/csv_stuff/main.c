@@ -100,6 +100,7 @@ int main(int argc, char *argv[]) {
     fprintf(output_file, "%s\n", players_of_match[i]);
   }
 
+  fprintf(output_file, "%s", "\nDONEE!!\n");
   fclose(output_file);
   return EXIT_SUCCESS;
 }
