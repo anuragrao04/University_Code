@@ -1,9 +1,14 @@
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
-  int a = 10;
-  int b = 20;
-  int *pA = &a;
-  printf("%d", pA[0]);
+int globalVariable = 10;
+
+void function() {
+  globalVariable++;
+  printf("Global Variable: %d\n", globalVariable);
+}
+
+int main() {
+  function();
+  printf("main: %d", globalVariable);
   return 0;
 }

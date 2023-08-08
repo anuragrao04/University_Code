@@ -10,22 +10,22 @@ int my_strlen(char str[]) {
 }
 
 void my_strcpy(char str1[], char str2[]) {
-  for (int i = 0; i < my_strlen(str2); i++) {
+  for (int i = 0; i <= my_strlen(str2); i++) {
     str1[i] = str2[i];
   }
-  str1[strlen(str2)] = '\0';
 }
 
 int my_strcmp(char str1[], char str2[]) {
-  int counter = 0;
   for (int i = 0; i < my_strlen(str2); i++) {
-    counter += str1[i] - str2[i];
+    if (str1[i] != str2[i]) {
+      return str1[i] - str2[i];
+    }
   }
-  return counter;
+  return 0;
 }
 
 char *my_strchr(char str[], char ch) {
-  for (int i = 0; i < my_strlen(str); i++) {
+  while (*str != '\0') {
     if (*str == ch) {
       return str;
     }
@@ -36,12 +36,12 @@ char *my_strchr(char str[], char ch) {
 
 char *my_strcat(char str1[], char str2[]) {
   int len = my_strlen(str1);
-  int index = len;
-  for (int i = 0; i < my_strlen(str2); i++) {
-    str1[index] = str2[i];
-    index++;
+  int len2 = my_strlen(str2);
+  int counter;
+  for (int i = len; i <= len + len2; i++) {
+    str1[i] = str2[counter];
+    counter++;
   }
-  str1[index] = '\0';
   return str1;
 }
 

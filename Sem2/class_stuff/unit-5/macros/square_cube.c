@@ -1,11 +1,11 @@
-
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-#ifdef __unix__
-  printf("This code is being compiled on a Unix system.\n");
-#else
-  printf("This code is not being compiled on a Unix system.\n");
-#endif
-  return 0;
+#define ADD(x, y) (x + y + x)
+
+int main(int argc, char *argv[]) {
+  int a = 10;
+  int b = 11;
+  printf("%d\n", ADD(++a, ++b));
+  return EXIT_SUCCESS;
 }
