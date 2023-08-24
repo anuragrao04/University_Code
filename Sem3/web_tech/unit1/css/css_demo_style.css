@@ -1,0 +1,19 @@
+    .text_blue {
+      color: blue;
+    }
+
+    .padding10 {
+      padding: 10px;
+    }
+
+    p.text_blue {
+      font-size: 24pt;
+    }
+
+    .text_red {
+      color: red;
+    }
+
+    #this_is_h2_pa {
+      border: 2px solid;
+    }
