@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Geolocation Example</title>
+</head>
+
+<body>
+  <script>
+
+
+    navigator.geolocation.getCurrentPosition(success, error)
+
+    function success(position) {
+      console.log(position);
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      console.log("Latitude: " + latitude);
+      console.log("Longitude: " + longitude);
+    }
+
+    function error(error) {
+      console.log("Error retrieving geolocation: " + error.message);
+    }
+  </script>
+</body>
+
+</html>
