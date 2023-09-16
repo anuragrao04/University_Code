@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>inline events</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <button type="button" onclick=handleClick()>Click</button>
+  <button type="button" id="js-button">Click but in JS</button>
+  <script>
+    function handleClick() {
+      alert("Clicked!");
+    }
+
+    // does the same thing but separated these two functions for explanation purposes
+    function handleClicked_JS() {
+      alert("This handler was added through JS");
+    }
+
+    const butt = document.querySelector("#js-button")
+    butt.onclick = handleClicked_JS;
+  </script>
+</body>
+
+</html>

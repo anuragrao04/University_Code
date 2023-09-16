@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Selectors</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <h1 class="apply_color_color_border">Just a random H1</h1>
+  <div class="apply_color_color_border">This is what is already existing</div>
+  <div class="apply_background">I'm going to apply background to this div</div>
+  <div class="apply_background" id="padding">I'm going to apply padding and background to this div</div>
+
+
+  <script>
+    const div_padding = document.getElementById("padding"); // getElementById (notice it's singular. IDs are menat to be unique)
+    div_padding.style.padding = "10px";
+
+
+    const divs_background = document.getElementsByClassName("apply_background"); // getElementsByClassName (notice it's plural. "Elements". There may be multiple elements with the same class name)
+    // loop for every div
+    for (const div of divs_background) {
+      div.style.backgroundColor = "grey"
+    }
+
+
+    const all_divs = document.getElementsByTagName("div");
+    for (const div of all_divs) {
+      div.style.border = "2px solid black"; // applying border to all divs
+    }
+
+
+    // document.querrySelector is all of these functions combined. You can use any CSS selector on it:
+
+    const color_color_border = document.querySelector(".apply_color_color_border"); // singular. Selects the first match for the selector
+    color_color_border.style.border = "2px solid red"
+
+
+    const color_color_borders = document.querySelectorAll(".apply_color_color_border"); // selects all elements with that selector
+    for (element of color_color_borders) {
+      element.style.borderLeft = "3px solid green" // this not only sets the second div's border left to green but also overrides the h1's border left only
+    }
+
+
+  </script>
+</body>
+
+</html>

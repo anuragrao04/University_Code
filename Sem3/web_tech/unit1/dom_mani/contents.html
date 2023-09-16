@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Getting contents</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="parent">
+    some text content
+    <div class="child1">Hi, I'm the first child</div>
+    <div class="child2">Hi, I'm the second child</div>
+  </div>
+
+
+  <script>
+    const parent = document.querySelector(".parent");
+
+
+    // logging both innerText and innerHTML to the console
+    console.log("inner text: " + parent.innerText);
+    console.log("inner html: " + parent.innerHTML);
+  </script>
+</body>
+
+</html>

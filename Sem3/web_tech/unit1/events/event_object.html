@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Track Mouse</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="xy">X: 0 Y: 0</div>
+  <script>
+    function handleMouseOver(event) {
+      const divxy = document.querySelector(".xy");
+      let x = event.clientX;
+      let y = event.clientY;
+      divxy.innerText = "X: " + x + "Y: " + y;
+    }
+
+    document.onmousemove = handleMouseOver;
+  </script>
+</body>
+
+</html>

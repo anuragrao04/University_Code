@@ -1,9 +1,7 @@
-function add(a, b, result) {
-  result = a + b;
-}
+let some_object = {
+  var1: "bun samosa",
+  "var2": "bun samosa but string",
+  var3: "masala puri",
+};
 
-let result;
-let a = 10, b = 20;
-
-add(a, b);
-console.log("result is " + result);
+console.log(some_object.var3); // masala puri

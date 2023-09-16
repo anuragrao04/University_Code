@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+  <script>
+    function submitClicked(event) {
+      event.preventDefault();
+      alert("Submitted");
+    }
+  </script>
+</head>
+
+<body>
+
+  <h2>PES Revaluation Request</h2>
+
+  <center>
+    <img src="pes_logo.png" alt="" height="200px">
+  </center>
+
+  <form onsubmit="submitClicked(event)">
+    <table border>
+      <th colspan="2">Details</th>
+      <tr>
+        <td>
+          <label for="name">Name</label>
+        </td>
+        <td>
+          <input type="text" name="Name" value="" required>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>
+          <label for="name">Email</label>
+        </td>
+        <td>
+          <input type="email" name="email" value="" required>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="phone number">Phone Number</label>
+        </td>
+        <td>
+          <input type="number" name="Phone Number" value="" required>
+        </td>
+      </tr>
+
+
+
+      <tr>
+        <td>
+          <label for="srn">SRN</label>
+        </td>
+        <td>
+          <input type="text" name="srn" value="" required>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>
+          <label for="subject">Subject</label>
+        </td>
+        <td>
+          <input type="radio" name="Subject" value="Web Tech" required>
+          <label for="Web Tech">Web Tech</label>
+          <input type="radio" name="Subject" value="DSA" required>
+          <label for="DSA">DSA</label>
+          <input type="radio" name="Subject" value="AFLL" required>
+          <label for="AFLL">AFLL</label>
+          <input type="radio" name="Subject" value="DDCO" required>
+          <label for="DDCO">DDCO</label>
+          <input type="radio" name="Subject" value="SDS" required>
+          <label for="SDS">SDS</label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="Date">
+            Date
+          </label>
+        </td>
+        <td>
+          <input type="date" name="date" value="" required>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>
+          <label for="Description">
+            Description
+          </label>
+        </td>
+        <td>
+          <input type="text" name="Description" value="" required>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="Payment">Payment Method</label>
+        </td>
+        <td>
+          <select name="payment" required multiple>
+            <option value="UPI">UPI</option>
+            <option value="Net Banking">Net Banking</option>
+            <option value="Credit Card">Credit Card</option>
+            <option value="Debit Card">Debit Card</option>
+          </select>
+        </td>
+      </tr>
+
+    </table>
+
+    <input type="checkbox" name="isValid" value="" required>
+    <label>The details above are to the best of my knowledge</label>
+
+    <p>Note that these details are final and can not be changed in the future. Hit submit only after confirming
+      everything entered is correct</p>
+
+    <a href="https://pes.edu">Click here for terms and conditions</a>
+
+    <input type="reset" name="reset" value="reset">
+    <input type="submit" name="submit" value="submit">
+  </form>
+</body>
+
+</html>

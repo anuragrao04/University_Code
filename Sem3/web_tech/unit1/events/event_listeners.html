@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Event Listeners</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div id="some_id">
+    Hover for instant dark mode
+  </div>
+
+  <script>
+    const div = document.querySelector("#some_id");
+    function handleMouseOver() {
+      const body = document.querySelector("body");
+      body.style.backgroundColor = "black";
+      div.style.color = "white"; // so that you're still able to see the text on a black background
+    }
+
+    div.addEventListener("mouseover", handleMouseOver);
+  </script>
+</body>
+
+</html>
