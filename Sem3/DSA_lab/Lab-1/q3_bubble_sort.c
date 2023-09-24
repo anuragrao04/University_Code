@@ -7,15 +7,26 @@ void swap(int *a, int *b) {
   *b = temp;
 }
 
+// void bubble_sort(int array[], int n) {
+//   for (int i = 1; i < n; i++) {
+//     for (int j = 0; j < n - 1; j++) {
+//       if (array[j] > array[j + 1]) {
+//         swap(&array[j], &array[j + 1]);
+//       }
+//     }
+//   }
+// }
+
 void bubble_sort(int array[], int n) {
   for (int i = 1; i < n; i++) {
-    for (int j = 0; j < n - 1; j++) {
+    for (int j = 0; j < n - i; j++) {
       if (array[j] > array[j + 1]) {
         swap(&array[j], &array[j + 1]);
       }
     }
   }
 }
+
 int main(int argc, char *argv[]) {
 
   int n;

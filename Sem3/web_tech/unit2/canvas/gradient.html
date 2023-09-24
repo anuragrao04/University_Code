@@ -11,10 +11,11 @@
 <body>
   <canvas id="myCanvas" width="200" height="100"></canvas>
 
-
   <script>
-    let canv = document.getElementByID("myCanvas");
-    // TODO Gradient
+    let canv = document.getElementById("myCanvas");
+    let context = canv.getContext("2d");
+    context.fillStyle = "#000000";
+    context.fillRect(10, 10, 100, 100);
   </script>
 </body>
 

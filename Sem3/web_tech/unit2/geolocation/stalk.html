@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Ima stalk you</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="location"></div>
+  <!-- This div is used to display the location we found out, we gonna put the latitude and longitude positions here -->
+
+  <script>
+    let div_position = document.querySelector(".location"); // select using class
+
+    function show_position(position) {
+      div_position.innerHTML = `Latitude: ${position.coords.latitude} Longitude: ${position.coords.longitude}`;
+    }
+
+    function location_failed(error) {
+      div_position.innerHTML = error.message;
+    }
+
+    navigator.geolocation.getCurrentPosition(show_position, location_failed);
+  </script>
+</body>
+
+</html>

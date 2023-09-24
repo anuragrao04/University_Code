@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Web Workers Demo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <script>
+    const message_div = document.querySelector(".message-from-worker");
+    let worker = new Worker("./worker.js"); // you pass in the address to your worker.js file. This is just the partner JS file that you'd use as a worker to do things for you parallely.
+
+
+    // The worker will do things for you but how do you communicate with it? With messages. 
+    // let's send a message to the worker
+    worker.postMessage('Hello, worker!');
+
+
+
+    // What do we do when we receive a message from the worker:
+    worker.onmessage = function (message) {
+      console.log("received reply from worker: " + message.data);
+    }
+  </script>
+</body>
+
+</html>
