@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #define NUM_SPACE 5
 
 typedef struct node {
@@ -16,6 +17,8 @@ void postorder(node_t *root);
 void display(node_t *root, int space);
 int count_nodes(node_t *root);
 int count_leaves(node_t *root);
+int get_height(node_t * root);
+node_t *delete_node(node_t *root, int key);
 
 int main(int argc, char *argv[]) {
 
@@ -31,7 +34,9 @@ int main(int argc, char *argv[]) {
     printf("5. Display\n");
     printf("6. Count nodes\n");
     printf("7. Count leaves\n");
-    printf("8. Exit\n");
+    printf("8. Get height\n");
+    printf("9. Delete\n");
+    printf("0. Exit\n");
     printf("Enter your choice: ");
     scanf("%d", &choice);
 
@@ -70,6 +75,16 @@ int main(int argc, char *argv[]) {
       break;
 
     case 8:
+      printf("Height: %d\n", get_height(root));
+      break;
+
+    case 9:
+      printf("Enter data: ");
+      scanf("%d", &data);
+      root = delete_node(root, data);
+      break;
+
+    case 0:
       printf("Exiting...\n");
       break;
 
@@ -78,7 +93,7 @@ int main(int argc, char *argv[]) {
       break;
     }
 
-  } while (choice != 8);
+  } while (choice != 0);
 
   return EXIT_SUCCESS;
 }
@@ -178,4 +193,52 @@ int count_leaves(node_t *root) {
   } else {
     return count_leaves(root->lchild) + count_leaves(root->rchild);
   }
+}
+
+
+
+int get_height(node_t * root){
+  if(root == NULL){
+    return -1;
+  }
+  else if(root->lchild == NULL && root->rchild == NULL) {
+    return 0;
+  } else{
+    return 1 + fmax(get_height(root->rchild), get_height(root->lchild));
+  }
+}
+
+
+node_t* get_min_node(node_t* root){
+  while(root->lchild != NULL && root != NULL){
+    root = root->lchild;
+  }
+  return root;
+}
+
+node_t *delete_node(node_t *root, int key){
+  if(root == NULL){
+    printf("Element not found\n");
+    return root;
+  }
+  if(key < root->data){
+    root->lchild = delete_node(root->lchild, key);
+  } else if(key > root->data){
+    root->rchild = delete_node(root->rchild, key);
+  } else{
+    if (root->rchild == NULL){
+      node_t* temp = root->lchild;
+      free(root);
+      return temp;
+    } else if(root->lchild == NULL){
+      node_t* temp = root->rchild;
+      free(root);
+      return temp;
+    }
+    node_t* temp = get_min_node(root->rchild);
+    root->data = temp->data;
+    root->rchild = delete_node(root->rchild, temp->data);
+
+  }
+  return root;
 }
