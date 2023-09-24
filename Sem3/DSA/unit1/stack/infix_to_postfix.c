@@ -1,90 +1,83 @@
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-#define SIZE 100
-
-// Stack implementation
-struct Stack {
+typedef struct stack{
+  char arr[100];
   int top;
-  unsigned capacity;
-  char *array;
-};
+} stack;
 
-struct Stack *createStack(unsigned capacity) {
-  struct Stack *stack = (struct Stack *)malloc(sizeof(struct Stack));
-  stack->capacity = capacity;
-  stack->top = -1;
-  stack->array = (char *)malloc(stack->capacity * sizeof(char));
-  return stack;
+void push(stack *stk, char data)
+{
+  stk->arr[++stk->top] = data;
 }
 
-int isEmpty(struct Stack *stack) { return stack->top == -1; }
-
-char peek(struct Stack *stack) { return stack->array[stack->top]; }
-
-char pop(struct Stack *stack) {
-  if (!isEmpty(stack))
-    return stack->array[stack->top--];
-  return '$';
+char pop(stack *stk){
+  return stk->arr[stk->top--];
 }
 
-void push(struct Stack *stack, char op) { stack->array[++stack->top] = op; }
-
-int isOperand(char ch) {
-  return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
+char peek(stack *stk){
+  return stk->arr[stk->top];
 }
 
-int Prec(char ch) {
-  switch (ch) {
-  case '+':
-  case '-':
+int get_precedence(char operator){
+  if(operator == '+' || operator == '-'){
     return 1;
-  case '*':
-  case '/':
+  } else if(operator == '*' || operator == '/'){
     return 2;
-  case '$':
+  } else if(operator == '^'){
     return 3;
+  } else if(operator == '('){
+    return 0;
+  } else {
+    return -1;
   }
-  return -1;
 }
 
-void infixToPostfix(char *exp) {
-  int i, k;
-  struct Stack *stack = createStack(strlen(exp));
-  if (!stack)
-    return;
+char *get_postfix(char* infix){
+  char* postfix = malloc(sizeof(char) * 64);
+  int counter = 0;
+  stack stk;
+  stk.top = -1;
+  push(&stk, '#');
 
-  for (i = 0, k = -1; exp[i]; ++i) {
-    if (isOperand(exp[i]))
-      exp[++k] = exp[i];
 
-    else if (exp[i] == '(')
-      push(stack, exp[i]);
+  while(*infix != '\0'){
+    if(isalpha(infix[0])){
+      postfix[counter++] = infix[0];
+    } else{
+      if(*infix == ')'){
+        char ch = pop(&stk);
+        while(ch != '('){
+          postfix[counter++] = ch;
+          ch = pop(&stk);
+        }
+        infix++;
+        continue;
+      }
 
-    else if (exp[i] == ')') {
-      while (!isEmpty(stack) && peek(stack) != '(')
-        exp[++k] = pop(stack);
-      pop(stack);
 
-    } else {
-      while (!isEmpty(stack) && Prec(exp[i]) <= Prec(peek(stack)))
-        exp[++k] = pop(stack);
-      push(stack, exp[i]);
+
+      int prec = get_precedence(infix[0]);
+      while(get_precedence(peek(&stk)) >= prec){
+        postfix[counter++] = pop(&stk);
+      }
+      push(&stk, infix[0]);
     }
+    infix++;
   }
-
-  while (!isEmpty(stack))
-    exp[++k] = pop(stack);
-
-  exp[++k] = '\0';
-  printf("Postfix expression: %s\n", exp);
+  while(peek(&stk) != '#'){
+    postfix[counter++] = pop(&stk);
+  }
+  postfix[counter] = '\0';
+  return postfix;
 }
 
-int main() {
-  char exp[SIZE];
-  printf("Enter the infix expression: ");
-  fgets(exp, SIZE, stdin);
-  infixToPostfix(exp);
-  return 0;
+int main(int argc, char *argv[])
+{
+  char infix[64];
+  printf("Enter infix expression: ");
+  scanf("%s", infix);
+  printf("Postfix expression: %s\n", get_postfix(infix));
+  return EXIT_SUCCESS;
 }
