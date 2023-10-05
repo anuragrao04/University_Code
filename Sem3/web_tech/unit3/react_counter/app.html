@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Counter</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div class="app"></div>
+  </body>
+
+  <script type="text/babel">
+    function Counter() {
+      const [count, setCount] = React.useState(0);
+
+      React.useEffect(() => {
+        let interval = setInterval(() => {
+          setCount((oldCount) => oldCount + 1);
+        });
+
+        return () => {
+          clearInterval(interval);
+        };
+      }, []);
+
+      return (
+        <div>
+          <div className="count">{count}</div>
+        </div>
+      );
+    }
+
+    const container = document.querySelector(".app");
+    const root = ReactDOM.createRoot(container);
+    root.render(<Counter />);
+  </script>
+</html>

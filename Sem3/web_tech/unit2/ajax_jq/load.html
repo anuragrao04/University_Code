@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+  <!-- import jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="information"></div>
+  <button>Click to get information</button>
+</body>
+
+
+<script>
+  $("button").on("click", () => {
+    $(".information").load("path/to/url/that/returns/text", () => {
+      console.log("Load was performed.");
+    })
+  })
+</script>
+
+</html>
