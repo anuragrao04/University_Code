@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Color Color</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div class="root"></div>
+  </body>
+
+  <script type="text/babel">
+    const rootElement = document.querySelector(".root");
+    const root = ReactDOM.createRoot(rootElement);
+
+    function ColorColor(props) {
+      const colors = [
+        "red",
+        "purple",
+        "yellow",
+        "orange",
+        "green",
+        "blue",
+        "black",
+      ];
+      const [color, setColor] = React.useState(colors[0]);
+      const [index, setIndex] = React.useState(0);
+
+      const changeColor = () => {
+        setIndex((oldIndex) => oldIndex + 1);
+        if (index === colors.length - 1) {
+          setIndex(0);
+        }
+        const newColor = colors[index];
+        console.log({ index, newColor });
+        setColor(newColor);
+      };
+
+      return (
+        <div>
+          <h1 style={{ color: color, fontFamily: "Roboto" }}>{color}</h1>
+          <button onClick={changeColor}>Change Color</button>
+        </div>
+      );
+    }
+
+    root.render(<ColorColor />);
+  </script>
+</html>

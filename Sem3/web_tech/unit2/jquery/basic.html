@@ -1,26 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <title>Basic JQuery</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
 
-<head>
-  <title>Basic JQuery</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/style.css" rel="stylesheet">
+    <!-- import jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-  <!-- import jquery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-</head>
+  <body>
+    <h1 class="heading">
+      This is a H1 Tag. I am going to set the color of this to be white and
+      background to be black in jquery
+    </h1>
 
-<body>
-  <h1 class="heading">This is a H1 Tag. I am going to set the color of this to be white and background to be black in
-    jquery</h1>
-
-
-  <script>
-    jQuery(".heading").css("color", "white");
-    $(".heading").css("background-color", "black");
-  </script>
-</body>
-
+    <script>
+      jQuery(".heading").css("color", "white");
+      $(".heading").css("background-color", "black");
+    </script>
+  </body>
 </html>

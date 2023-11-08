@@ -21,7 +21,7 @@
       React.useEffect(() => {
         let interval = setInterval(() => {
           setCount((oldCount) => oldCount + 1);
-        });
+        }, 1000);
 
         return () => {
           clearInterval(interval);
@@ -30,7 +30,7 @@
 
       return (
         <div>
-          <div className="count">{count}</div>
+          <h1 className="count">{count}</h1>
         </div>
       );
     }

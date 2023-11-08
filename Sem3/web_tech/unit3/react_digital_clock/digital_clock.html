@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Digital Clock</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+
+  <script type="text/babel">
+    function Clock(props) {
+      let [time, setTime] = React.useState(new Date().toLocaleTimeString());
+      let timer = setInterval(() => {
+        setTime(new Date().toLocaleTimeString());
+      }, 1000);
+
+      return <h1>{time}</h1>;
+    }
+
+    const rootElement = document.getElementById("root");
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(<Clock />);
+  </script>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Component LifeCycle</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="counter"></div>
+    </div>
+  </body>
+
+  <script type="text/babel">
+    class Counter extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { count: 0 };
+      }
+
+      componentWillMount = () => {
+        console.log("Component will mount");
+      };
+
+      componentDidMount = () => {
+        console.log("Component did mount");
+      };
+
+      componentDidUpdate = (prevProps, prevState) => {
+        console.log("Prev Props: ");
+        console.log(prevProps);
+        console.log("Prev State: ");
+        console.log(prevState);
+        console.log("Current State: ");
+        console.log(this.state);
+      };
+
+      componentWillUnmount = () => {
+        console.log("Componet will unmount");
+      };
+
+      remove = () => {
+        ReactDOM.unmountComponentAtNode(document.getElementById("root"));
+      };
+
+      increment = () => {
+        this.setState({ count: this.state.count + 1 });
+      };
+
+      decrement = () => {
+        this.setState({ count: this.state.count - 1 });
+      };
+
+      reset = () => {
+        this.setState({ count: 0 });
+      };
+
+      render() {
+        return (
+          <div>
+            <h1>Count: {this.state.count}</h1>
+            <button onClick={this.increment}>Increment</button>
+            <button onClick={this.decrement}>Decrement</button>
+            <button onClick={this.reset}>Reset</button>
+            <button onClick={this.remove}>Remove</button>
+          </div>
+        );
+      }
+    }
+    const root = document.getElementById("root");
+    const app = ReactDOM.createRoot(root);
+    app.render(<Counter />);
+  </script>
+</html>

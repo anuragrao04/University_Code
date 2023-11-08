@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Click Events</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1 style="cursor: pointer">Halo 2 Video Game</h1>
+    <div style="cursor: pointer">price $50</div>
+  </body>
+
+  <script>
+    const div = document.querySelector("div");
+    const header = document.querySelector("h1");
+
+    div.addEventListener("click", () => {
+      div.style.color = "red";
+      div.style.fontSize = "30px";
+    });
+
+    header.addEventListener(
+      "click",
+      () => {
+        alert("The discount sale is going to end!");
+      },
+      true,
+    );
+  </script>
+</html>

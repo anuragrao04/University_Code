@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>jquery hide and seek</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <button class="click">toggle</button>
+    <div style="display: none" class="hide">this is a hidden element</div>
+  </body>
+
+  <script>
+    $(".click").click(() => {
+      $(".hide").fadeToggle();
+    });
+  </script>
+</html>
