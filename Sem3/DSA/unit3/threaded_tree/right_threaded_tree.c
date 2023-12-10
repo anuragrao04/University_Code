@@ -1,5 +1,3 @@
-// TODO This doesn't work
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -24,16 +22,11 @@ int main(int argc, char *argv[]) {
   int n;
   printf("Enter number of elements: ");
   scanf("%d", &n);
-  n = 5;
   printf("Enter elements space separated: ");
-  int elements[n];
+  int element;
   for (int i = 0; i < n; i++) {
-    scanf("%d", &elements[i]);
-  }
-
-  // insertion of all elements
-  for (int i = 0; i < n; i++) {
-    insert_node(&tree, elements[i]);
+    scanf("%d", &element);
+    insert_node(&tree, element);
   }
 
   // inorder traversal
@@ -81,7 +74,7 @@ void insert_node(node_t **root, int data) {
 void setLeft(node_t *prev, node_t *node) {
   prev->left = node;
   node->right = prev;
-  node->rthread = 1;
+  node->rthread = 1; // not needed but here for clarity
 }
 
 void setRight(node_t *prev, node_t *node) {
