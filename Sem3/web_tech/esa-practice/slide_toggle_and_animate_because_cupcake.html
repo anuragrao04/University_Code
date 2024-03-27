@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>slide and become big(hehe)</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="toggle-text">Toggli Texti</div>
+    <button class="toggle-button" style="height: 300px">Toggli</button>
+  </body>
+
+  <script>
+    $(".toggle-text").css("font-size", "50px");
+    setInterval(() => {
+      $(".toggle-text").slideToggle();
+    }, 800);
+  </script>
+</html>
